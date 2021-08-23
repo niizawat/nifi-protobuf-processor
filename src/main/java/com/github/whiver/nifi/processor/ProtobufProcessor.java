@@ -72,8 +72,8 @@ public abstract class ProtobufProcessor extends AbstractProcessor {
             .required(false)
             .description("Path to the Protocol Buffers schema to use to encode or decode the data. If set, this schema will " +
                     "be used when the flowfile protobuf.schemaPath is missing.")
-            .expressionLanguageSupported(false)
-            .addValidator(StandardValidators.createURLorFileValidator())
+            // .expressionLanguageSupported(false)
+            .addValidator(StandardValidators.FILE_EXISTS_VALIDATOR)
             .build();
 
     static final PropertyDescriptor COMPILE_SCHEMA = new PropertyDescriptor.Builder()
